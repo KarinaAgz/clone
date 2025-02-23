@@ -1,0 +1,249 @@
+<mvc:view
+    controllerName="logaligroup.project1.controller.Main"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns:table="sap.ui.table"
+    xmlns:f="sap.f"
+    xmlns:fb="sap.ui.comp.filterbar"
+>
+    <f:DynamicPage
+        id="MainView_DynamicPage_01"
+        backgroundDesign="Transparent"
+        fitContent="true"
+    >
+        <!-- fitContent="true" ajustar automáticamente el tamaño de 
+                                                                                                    un control al contenido que tiene dentro.-->
+        <f:header>
+            <f:DynamicPageHeader
+                id="MainView_DynamicPageHeader_01"
+                backgroundDesign="Transparent"
+            >
+                <f:content>
+                    <fb:FilterBar
+                        id="filterbar"
+                        search="onSearchButton"
+                        useToolbar="true"
+                    >
+                        <fb:filterGroupItem
+                            id="MainViewFilterGroupItem_01"
+                            name="Dates"
+                            label="{i18nmainView.dates}"
+                            groupName="visibleITems"
+                            visibleInFilterBar="true"
+                        >
+                            <fb:control>
+                                <DateRangeSelection
+                                    id="MainViewDateRangeSelection"
+                                    required="true"
+                                    placeholder="{i18n>mainView.placeholder1}"
+                                    value="{ 
+                                'type':'sap.ui.model.type.DateInterval', 
+                                'formatOptions': {'pattern':'yyyy/MM/dd'},
+                                'parts': [
+                                {'type': 'sap.ui.model.type.Date',
+                                 'path':'{requestModel>/dateFrom}'
+                                },
+                                {'type': 'sap.ui.model.type.Date',
+                                 'path':'{requestModel>/dateTo}'
+                                }
+                                ]}"
+                                    change="onDateChange"
+                                />
+                            </fb:control>
+                        </fb:filterGroupItem>
+                        <fb:filterGroupItem
+                            id="MainView_FilterGroupItem_03"
+                            name="Invoices"
+                            label="{i18n>mainview.invoices}"
+                            groupName="visibleItems"
+                            visibleInFilterBar="{requestModel>/visible_input_invoices}"
+                        >
+                            <fb:control>
+                                <MultiComboBox
+                                    id="MainView_MultiCommboBox_02"
+                                    selectionChange=""
+                                    selectionFinish="invoicesSelectionFinish"
+                                    placeholder="{i18n>mainview.comboBox.facturas.placeholder}"
+                                    width="auto"
+                                    selectedItems="{requestModel>/invoices}"
+                                    items="{ path:'EV_LayoutService>/ZZ1_CDS_SEARCH_HELP_VBELIN',
+                                                                                                                                                                                                                                                                       sorter:{path: 'vbeln'}}"
+                                >
+                                    <core:Item
+                                        id="item_invoices_01"
+                                        key="{EV_LayoutService>vbeln}"
+                                        text="{EV_LAyoutService>vbeln}"
+                                    />
+                                </MultiComboBox>
+                            </fb:control>
+                        </fb:filterGroupItem>
+                        <fb:filterGroupItem
+                            id="MainView_EV_Material_04"
+                            name="Material"
+                            label="{i18n>mainview.material}"
+                            groupName="visibleItems_ve"
+                            visibleInFilterBar="{requestModel>/visible_input_material}"
+                        >
+                            <fb:control>
+                                <MultiComboBox
+                                    id="MainView_multiCB_Material_VE"
+                                    selectionChange=""
+                                    selectionFinish="MaterialSelectionFinish"
+                                    placeholder="{i18n>mainview.combobox.material.placeholder}"
+                                    width="auto"
+                                    items="{
+                                                                                                                                                                                                                        path:'EV_LayoutService>/ZZ1_CDS_SEARXH_HELP_PARNR',
+                                                                                                                                                                                                                        sorter:{ path:'Parnr'}}"
+                                >
+                                    <core:Item
+                                        id="item_matnr_VE"
+                                        key="{EV_LayoutService>Parnr}"
+                                        text="{EV_LayoutService>ParnrDescription}"
+                                    />
+                                </MultiComboBox>
+                            </fb:control>
+                        </fb:filterGroupItem>
+
+                        <fb:filterGroupItem
+                            id="MainView_PT_Material"
+                            name="Material"
+                            label="{i18n>mainview.material}"
+                            groupName="visibleItems_pt"
+                            visibleInFilterBar="{requestModel>/visible_input_matnr_pt}"
+                        >
+                            <fb:control>
+                                <MultiComboBox
+                                    id="MainView_MultiCB_Material_PT"
+                                    selectionFinish="materialSelectionFinish"
+                                    width="auto"
+                                    items="{ path:'PT_LayoutService>/ZZ1_CDS_SEARCH_HELP_PARNR' , sorter:{path:'Parnr'}}"
+                                >
+                                    <core:Item
+                                        id="Item_matnr_PT"
+                                        key="{PT_LayoutService>Parnr}"
+                                        text="{PT_LayoutService>ParnrDescription}"
+                                    />
+                                </MultiComboBox>
+                            </fb:control>
+                        </fb:filterGroupItem>
+                        <fb:filterGroupItem
+                            id="MainView_FilterGroupItem_05"
+                            name="PurchasedOrders"
+                            label="{i18n>mainview.purchaseORders}"
+                            visibleInFilterBar="{requestModel>/visible_input_po}"
+                        >
+                            <fb:control>
+                                <MultiComboBox
+                                    id="MainView_MultiComboBox_05"
+                                    selectionChange="handleSelectionChange"
+                                    selectionFinish="poSelectionFinish"
+                                    placeholder="{i18n>mainview.combobox.po.placeholder}"
+                                    width="auto"
+                                    items="{path:'EV_LayoutService>/ZZ1_CDS_SEARCH_HELP_EBELN', sorter:{path:'ebeln'}}"
+                                >
+                                    <core:Item
+                                        id="item_matnr_05"
+                                        key="{EV_LayoutService>ebeln}"
+                                        text="{EV_LayoutSerrvice>ebeln}"
+                                    />
+                                </MultiComboBox>
+                            </fb:control>
+                        </fb:filterGroupItem>
+
+                        <fb:filterGroupItem
+                            id="MainView_FilterGroupItem_06"
+                            name="Customer"
+                            label="{i18n>mainview.customer}"
+                            groupName="visibleItems"
+                            visibleInFilterBar="{requestModel>/visible_input_cliente}"
+                        >
+                            <fb:control>
+                                <Input
+                                    id="MainView_input_cliente"
+                                    placeholder="{i18n>mainview.combobox.cliente.placeholder}"
+                                    showSuggestion="true"  
+                                    showValueHelp="false"
+                                    suggestionItems="{EV_LayoutService>/ZZ1_CDS_SEARCH_HELP_KUNNR }"
+                                    type="Text"
+                                    value="{requestModel>/cliente}"
+                                >
+                                <suggestionItems>
+                                    <core:Item id="MainView_item_Cliente" text="{EV_LayoutService>kunnr}"/>
+                                    
+                                </suggestionItems>
+                                </Input>
+                            </fb:control>
+                        </fb:filterGroupItem>
+
+                        <fb:filterGroupItem id="MainView_FilterGroupItem_07" name="Supplier" label="{i18n>mainview.supplier}" groupName="visibleITems" visibleInFilterBar="{requestModel>/visible_input_lifnr}">
+                            <fb:control>
+                                <Input id="MainView_Input_LinfnrVH" placeholder="Buscar Proveedro" showSuggestion="true" showValueHelp="true" suggestionItems="{lifnr_MP_Model>/}" type="Text" valueHelpRequest="onVHLifnrRequest" submit="onSubmit" value="{requestModel>/lifnr}">
+                                    <suggestionItems>
+                                        <core:Item id="MainView_Item_Limfnr" text="{lifnr_MP_Model>Lifnr}"/>
+                                        
+                                    </suggestionItems>
+                                </Input>
+                            </fb:control>
+                        </fb:filterGroupItem>
+
+                        <fb:filterGroupItem id="MAinView_filterGroupItem_MP" name="NumeroParte" label="{i18n>mainview.numparte}" groupName="visibleITems_VE" visibleInFilterBar="{requestModel>/visible_input_numParte_mp}">
+                            <fb:control>
+                                <Input id="MainView_Input_ParnrVH_MP" value="{reuqestModel>/parnr}" placeholder="buscar no.parte" showSuggestion="true" showValueHelp="true" type="Text" valueHelpRequest="onVHParnrRequest" submit="onSubmit_MP" suggestionItems="{numParte_MP_Model>/}">
+                                <suggestionItems>
+                                    <core:Item id="MainView_Item_Parnr_MP" text="{numParte_MP_Model>ParnrDescription}"/>
+
+                                </suggestionItems>
+                                </Input>
+                            </fb:control>
+
+                            <fb:filterGroupItem id="MainView_FGI_Bukrs_EV" name="Bukrs_EV" visibleInFilterBar="{requeestModel>/visible_input_bukrs_ev}">
+                                <fb:control>
+                                    <Input id="MainView_Input_bukrssVH_EV" value="{requestModel>/bukrs_ev}" showSuggestion="true" showValueHelp="true" type="Text" valueHelpRequest="onVHBukrs_EV_Request" submit="onSubmit_EV" suggestionItems="{EV_LayoutService}">
+                                        <suggestionItems>
+                                            <core:Item id="MainView_item_BUKRS_EV" text="{EV_LayoutService>butxt}"/>
+                                        </suggestionItems>
+                                    </Input>
+                                </fb:control>
+                            </fb:filterGroupItem>
+
+
+                            <fb:filterGroupItem id="MainView_FGI_Bukrs_MP" name="Bukrs_MP" label="{i18n>mainview.bukrs}" groupName="Bukrs_MP" visibleInFilterBar="{requestModel>/visible_input_bukrs_mp}">
+                                <fb:control>
+                                    <Input id="MainView_Input_BukrsVH_MP" value="{requestModel>/bukrs_mp}" placeholder="Buscar sociedad" showSuggestion="true" showValueHelp="true" type="Text" valueHelpRequest="onVHBukrs_MP_Request" submit="onSubmit_MP" suggestionItems="{bukrs_MP_Model>/}" >
+                                        <suggestionItems>
+                                            <core:Item id="MainView_Item_BUKRS_MP" text="{bukrs_MP_Model>butxt}"/>
+                                        </suggestionItems>                      
+                                    </Input>
+                                </fb:control>
+                            </fb:filterGroupItem>
+
+                            <fb:filterGroupItem id="MainView_FGI_Bukrs_PT" name="Bukrs_PT" label="{i18n>mainview.bukrs}" groupName="Bukrs_PT" visibleInFilterBar="{requestModel>/visible_input_bukrs_pt}">
+                                <fb:control>
+                                    <Input id="MainView_input_BukrsVH_PT" value="{requestModel>bukrs_pt}" placeholder="Buscar sociedad" showSuggestion="true" showValueHelp="true" type="Text" valueHelpRequest="onVHBukrs_PT_Request" submit="onSubmit_PT" suggestionItems="{bukrs_PT_Model>/}">
+                                        <suggestionItems>
+                                            <core:Item id="MainView_Item_BUKRS_PT" text="{bukrs_PT_Model>butxt}"/>
+
+                                        </suggestionItems>
+                                    </Input>
+                                </fb:control>
+                            </fb:filterGroupItem>
+                        </fb:filterGroupItem>
+                    </fb:FilterBar>
+                </f:content>
+            </f:DynamicPageHeader>
+        </f:header>
+        <f:content>
+            <IconTabBar id="MainView_IconTabBar_01" select="_selectLayout" expanded="true">
+                <items>
+                    <IconTabFilter id="MainView_IconTabFilter_01" text="{i18n>mainview.virtual}" key="{i18n>mainview.icontab.key.virtual}" >
+                        <!--tablea virtual-->
+                        <table:Table id="MainView_Table_01" rows="{evLayoutModel>/}" selectionMode="None" ariaLabelledBy="title" >
+                        </table:Table>
+
+                    </IconTabFilter>
+                </items>
+            </IconTabBar>
+        </f:content>
+    </f:DynamicPage>
+</mvc:view>
