@@ -239,8 +239,396 @@
                     <IconTabFilter id="MainView_IconTabFilter_01" text="{i18n>mainview.virtual}" key="{i18n>mainview.icontab.key.virtual}" >
                         <!--tablea virtual-->
                         <table:Table id="MainView_Table_01" rows="{evLayoutModel>/}" selectionMode="None" ariaLabelledBy="title" >
-                        </table:Table>
+                            <table:extension>
+                                <OverflowToolbar id="MainView_OverflowToolbar_01" style="Clear" >
+                                    <ToolbarSpacer  id="MainView_Toolbar_clear_01"/>
 
+                                    <Button id="MainView_Button_clear_01" text="Limpiar tabla" type="Transparent" press="exportExcel('MAinView_Table_01)"/>
+
+                                </OverflowToolbar>
+                            </table:extension>
+                            <table:columns>
+                                <table:Column id="MainView_column_01" width="8rem" hAlign="Center">
+                                    <Label  id="MainView_Label_01" text="{i18n>mainview.virtual.invoice}" wrapping="true"/>
+                                    <table:template>
+                                        <Text  id="MainView_Text_01" text="{evLayoutModel>vbeln}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+                                <table:Column id="MainView_Column_02" width="8rem" hAlign="Center">
+                                    <Label id="MainView_label_02" text="{i18n>mainview.virtual.date}" wrapping="true"/>
+                                        <table:template>
+                                            <Text id="MianView_Text_02" text="{evLayoutModel>fecha}" wrapping="true"/>
+                                        </table:template>
+                                </table:Column>
+                                <table:Column id="MainView_Column_03" width="8rem" hAlign="Center">
+                                    <Label  id="MainView_Label_03" text="{i18n>mainview.virtual.purchaseOrder}" wrapping="true"/>
+                                        <table:template>
+                                            <Text id="MainView_Text_03" text="{evLayoutModel>ebeln}" wrapping="true"/>
+                                        </table:template>
+                                </table:Column>
+                                 <table:Column id="MainView_column_04" width="8rem" hAlign="Center">
+                                    <Label  id="MainView_Label_04" text="{i18n>mainview.virtual.client}" wrapping="true"/>
+                                    <table:template>
+                                        <Text  id="MainView_Text_04" text="{evLayoutModel>kunnr}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+
+                                 <table:Column id="MainView_column_05" width="8rem" hAlign="Center">
+                                    <Label  id="MainView_Label_05" text="{i18n>mainview.virtual.cuprum}" wrapping="true"/>
+                                    <table:template>
+                                        <Text  id="MainView_Text_05" text="{evLayoutModel>parn}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+                                 <table:Column id="MainView_column_06" width="8rem" hAlign="Center">
+                                    <Label  id="MainView_Label_06" text="{i18n>mainview.virtual.tariffFraction}" wrapping="true"/>
+                                    <table:template>
+                                        <Text  id="MainView_Text_06" text="{evLayoutModel>ccngn}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+
+                                 <table:Column id="MainView_column_07" width="8rem" hAlign="Center">
+                                    <Label  id="MainView_Label_07" text="{i18n>mainview.virtual.description}" wrapping="true"/>
+                                    <table:template>
+                                        <Text  id="MainView_Text_07" text="{evLayoutModel>description_parnr}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+
+                                 <table:Column id="MainView_column_08" width="8rem" hAlign="Center">
+                                    <Label  id="MainView_Label_08" text="{i18n>mainview.virtual.descriptionPetition}" wrapping="true"/>
+                                    <table:template>
+                                        <Text  id="MainView_Text_08" text="{evLayoutModel>description_ped}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+
+                                 <table:Column id="MainView_column_09" width="8rem" hAlign="Center">
+                                    <Label  id="MainView_Label_09" text="{i18n>mainview.virtual.pieces}" wrapping="true"/>
+                                    <table:template>
+                                        <Text  id="MainView_Text_09" text="{evLayoutModel>fkimg}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+                                 <table:Column id="MainView_column_10" width="8rem" hAlign="Center">
+                                    <Label  id="MainView_Label_10" text="{i18n>mainview.virtual.kilos}" wrapping="true"/>
+                                    <table:template>
+                                        <Text  id="MainView_Text_10" text="{evLayoutModel>brgew}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+
+                                 <table:Column id="MainView_column_11" width="8rem" hAlign="Center">
+                                    <Label  id="MainView_Label_11" text="{i18n>mainview.virtual.pounds}" wrapping="true"/>
+                                    <table:template>
+                                        <Text  id="MainView_Text_11" text="{evLayoutModel>menge}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+                            </table:columns>
+                             <table:Column id="MainView_column_12" width="8rem" hAlign="Center">
+                                    <Label  id="MainView_Label_12" text="{i18n>mainview.virtual.meters}" wrapping="true"/>
+                                    <table:template>
+                                        <Text  id="MainView_Text_12" text="{evLayoutModel>meters}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+
+                                 <table:Column id="MainView_column_13" width="8rem" hAlign="Center">
+                                    <Label  id="MainView_Label_13" text="{i18n>mainview.virtual.feets}" wrapping="true"/>
+                                    <table:template>
+                                        <Text  id="MainView_Text_13" text="{evLayoutModel>menge_ft}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+
+                                 <table:Column id="MainView_column_14" width="8rem" hAlign="Center">
+                                    <Label  id="MainView_Label_14" text="{i18n>mainview.virtual.um}" wrapping="true"/>
+                                    <table:template>
+                                        <Text  id="MainView_Text_14" text="{evLayoutModel>meind}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+
+                                 <table:Column id="MainView_column_15" width="8rem" hAlign="Center">
+                                    <Label  id="MainView_Label_15" text="{i18n>mainview.virtual.USDunit}" wrapping="true"/>
+                                    <table:template>
+                                        <Text  id="MainView_Text_15" text="{evLayoutModel>wavwr}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+
+                                 <table:Column id="MainView_column_16" width="8rem" hAlign="Center">
+                                    <Label  id="MainView_Label_16" text="{i18n>mainview.virtual.USDtotal}" wrapping="true"/>
+                                    <table:template>
+                                        <Text  id="MainView_Text_16" text="{evLayoutModel>netwr}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+                    
+                        </table:Table>
+                    </IconTabFilter>
+
+                    <IconTabFilter id="MainView_IconTabFilter_02" text="{i18n>mainview.icontab.key.mp}" >
+
+                    <!--tabla MP-->
+                        <table:Table id="MainView_Table_02" rows="{mpLayoutModel>/}" selectionMode="None" ariaLabelledBy="title">
+                            <table:extension>
+                                <OverflowToolbar id="MainView_OverflowToolbar_02" style="Clear">
+                                    <ToolbarSpacer id="MainView_toolbarSpacer_02" />
+                                        <Button id="MainView_Button_02" icon="sap-icon://excel-attachment" type="Transparent" press="exportExcel('MainVew_table_02)"/>
+
+                                </OverflowToolbar>
+                            </table:extension>
+                            <table:columns>
+                                <table:Column id="MainView_coulumn_17" width="8rem" hAlign="Center">
+                                    <Label  id="MainView_Label_17" text="{i18n>mainview.mp.parteNumber}"/>
+                                    <table:template>
+                                        <Text  id="MainView_Text_17" text="{mpLayoutModel>Parnr}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+
+                                 <table:Column id="MainView_coulumn_18" width="8rem" hAlign="Center">
+                                    <Label  id="MainView_Label_18" text="{i18n>mainview.mp.description}"/>
+                                    <table:template>
+                                        <Text  id="MainView_Text_18" text="{mpLayoutModel>description}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+
+                                 <table:Column id="MainView_coulumn_19" width="8rem" hAlign="Center">
+                                    <Label  id="MainView_Label_19" text="{i18n>mainview.mp.englishDescription}"/>
+                                    <table:template>
+                                        <Text  id="MainView_Text_19" text="{mpLayoutModel>description_en}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+                                 <table:Column id="MainView_coulumn_20" width="8rem" hAlign="Center">
+                                    <Label  id="MainView_Label_20" text="{i18n>mainview.mp.category1}"/>
+                                    <table:template>
+                                        <Text  id="MainView_Text_20" text="{mpLayoutModel>category1}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+                                 <table:Column id="MainView_coulumn_21" width="8rem" hAlign="Center">
+                                    <Label  id="MainView_Label_21" text="{i18n>mainview.mp.category2}"/>
+                                    <table:template>
+                                        <Text  id="MainView_Text_21" text="{mpLayoutModel>category2}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+                                 <table:Column id="MainView_coulumn_22" width="8rem" hAlign="Center">
+                                    <Label  id="MainView_Label_22" text="{i18n>mainview.mp.tariffFraction}"/>
+                                    <table:template>
+                                        <Text  id="MainView_Text_22" text="{mpLayoutModel>ccngn}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+
+                                 <table:Column id="MainView_coulumn_23" width="8rem" hAlign="Center">
+                                    <Label  id="MainView_Label_23" text="{i18n>mainview.mp.wasteFA}"/>
+                                    <table:template>
+                                        <Text  id="MainView_Text_23" text="{mpLayoutModel>fa_desper}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+                                 <table:Column id="MainView_coulumn_24" width="8rem" hAlign="Center">
+                                    <Label  id="MainView_Label_24" text="{i18n>mainview.mp.comercialUM}"/>
+                                    <table:template>
+                                        <Text  id="MainView_Text_24" text="{mpLayoutModel>lmein}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+
+                                 <table:Column id="MainView_coulumn_25" width="8rem" hAlign="Center">
+                                    <Label  id="MainView_Label_25" text="{i18n>mainview.mp.tariffUM}"/>
+                                    <table:template>
+                                        <Text  id="MainView_Text_25" text="{mpLayoutModel>un_tarifa}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+                                 <table:Column id="MainView_coulumn_26" width="8rem" hAlign="Center">
+                                    <Label  id="MainView_Label_26" text="{i18n>mainview.mp.typeMP}"/>
+                                    <table:template>
+                                        <Text  id="MainView_Text_26" text="{mpLayoutModel>tipo_mp}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+
+                                 <table:Column id="MainView_coulumn_27" width="8rem" hAlign="Center">
+                                    <Label  id="MainView_Label_27" text="{i18n>mainview.mp.immexcategory}"/>
+                                    <table:template>
+                                        <Text  id="MainView_Text_27" text="{mpLayoutModel>category_inmmex" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+                                 <table:Column id="MainView_coulumn_28" width="8rem" hAlign="Center">
+                                    <Label  id="MainView_Label_28" text="{i18n>mainview.mp.originCountry}"/>
+                                    <table:template>
+                                        <Text  id="MainView_Text_28" text="{mpLayoutModel>originCountry}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+
+                                 <table:Column id="MainView_coulumn_29" width="8rem" hAlign="Center">
+                                    <Label  id="MainView_Label_29" text="{i18n>mainview.mp.unitCost}"/>
+                                    <table:template>
+                                        <Text  id="MainView_Text_29" text="{mpLayoutModel>netpr}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+                                 <table:Column id="MainView_coulumn_30" width="8rem" hAlign="Center">
+                                    <Label  id="MainView_Label_30" text="{i18n>mainview.mp.kgWeigth}"/>
+                                    <table:template>
+                                        <Text  id="MainView_Text_30" text="{mpLayoutModel>menge}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+
+                                 <table:Column id="MainView_coulumn_31" width="8rem" hAlign="Center">
+                                    <Label  id="MainView_Label_31" text="{i18n>mainview.mp.reference}"/>
+                                    <table:template>
+                                        <Text  id="MainView_Text_31" text="{mpLayoutModel>reference}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+
+                                 <table:Column id="MainView_coulumn_32" width="8rem" hAlign="Center">
+                                    <Label  id="MainView_Label_32" text="{i18n>mainview.mp.observations}"/>
+                                    <table:template>
+                                        <Text  id="MainView_Text_32" text="{mpLayoutModel>observations}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+                            </table:columns>
+                        </table:Table>
+                    </IconTabFilter>
+
+                    <IconTabFilter id="MainView_IconTabFilter_03" text="{i18n>mainview.icontab.key.pt}">
+                    <!--tabla PT-->
+                        <table:Table id="MainView_table_03" rows="{ptLayoutModel>/}" selectionMode="None" ariaLabelledBy="title">
+                            <table:extension>
+                                <OverflowToolbar id="MAinView_OverflowToolbar_03" style="Clear">
+                                    <ToolbarSpacer  id="MainView_ToolbarSpacer_030"/>
+                                    <Button  id="MainView_Button_clear_03" text="Limpiar tabla" type="Transparent" press="clearTable()"/>
+                                    <Button id="MainView_Button_03" icon="sap-icon://excel-attachment" type="Transparent" press="exportExcel('MainView_Table_03)"/>
+
+                                </OverflowToolbar>
+                            </table:extension>
+                            <table:columns>
+                                <table:Column id="MainView_colum_33" width="8rem" hAlign="Center">
+                                    <Label id="MainView_Label_33" text="{i18n>mainview.pt.parteNumber}"/>
+                                    <table:template>
+                                        <Text id="MainView_Text_33" text="{ptLayoutModel>Parnr}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+
+                                <table:Column id="MainView_colum_34" width="8rem" hAlign="Center">
+                                    <Label id="MainView_Label_34" text="{i18n>mainview.pt.description}"/>
+                                    <table:template>
+                                        <Text id="MainView_Text_34" text="{ptLayoutModel>description}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+
+                                <table:Column id="MainView_colum_35" width="8rem" hAlign="Center">
+                                    <Label id="MainView_Label_35" text="{i18n>mainview.pt.englishDescription}"/>
+                                    <table:template>
+                                        <Text id="MainView_Text_35" text="{ptLayoutModel>description_en}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+
+                                <table:Column id="MainView_colum_36" width="8rem" hAlign="Center">
+                                    <Label id="MainView_Label_36" text="{i18n>mainview.pt.category1}"/>
+                                    <table:template>
+                                        <Text id="MainView_Text_36" text="{ptLayoutModel>category1}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+                                <table:Column id="MainView_colum_37" width="8rem" hAlign="Center">
+                                    <Label id="MainView_Label_37" text="{i18n>mainview.pt.tariffFraction}"/>
+                                    <table:template>
+                                        <Text id="MainView_Text_37" text="{ptLayoutModel>ccngn}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+
+                                <table:Column id="MainView_colum_38" width="8rem" hAlign="Center">
+                                    <Label id="MainView_Label_38" text="{i18n>mainview.pt.wasteFA}"/>
+                                    <table:template>
+                                        <Text id="MainView_Text_38" text="{ptLayoutModel>fa_desper}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+
+                                <table:Column id="MainView_colum_39" width="8rem" hAlign="Center">
+                                    <Label id="MainView_Label_39" text="{i18n>mainview.pt.comercialUM}"/>
+                                    <table:template>
+                                        <Text id="MainView_Text_39" text="{ptLayoutModel>lmein}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+
+                                <table:Column id="MainView_colum_40" width="8rem" hAlign="Center">
+                                    <Label id="MainView_Label_40" text="{i18n>mainview.pt.tariffUM}"/>
+                                    <table:template>
+                                        <Text id="MainView_Text_40" text="{ptLayoutModel>um_tarifs}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+                                <table:Column id="MainView_colum_41" width="8rem" hAlign="Center">
+                                    <Label id="MainView_Label_41" text="{i18n>mainview.pt.destinationCountry}"/>
+                                    <table:template>
+                                        <Text id="MainView_Text_41" text="{ptLayoutModel>country}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+                                <table:Column id="MainView_colum_42" width="8rem" hAlign="Center">
+                                    <Label id="MainView_Label_42" text="{i18n>mainview.pt.unitCost}"/>
+                                    <table:template>
+                                        <Text id="MainView_Text_42" text="{ptLayoutModel>netpr}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+                                <table:Column id="MainView_colum_43" width="8rem" hAlign="Center">
+                                    <Label id="MainView_Label_43" text="{i18n>mainview.pt.kgWeight}"/>
+                                    <table:template>
+                                        <Text id="MainView_Text_43" text="{ptLayoutModel>menge}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+                                <table:Column id="MainView_colum_44" width="8rem" hAlign="Center">
+                                    <Label id="MainView_Label_44" text="{i18n>mainview.pt.reference}"/>
+                                    <table:template>
+                                        <Text id="MainView_Text_44" text="{ptLayoutModel>reference}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+                                <table:Column id="MainView_colum_45" width="8rem" hAlign="Center">
+                                    <Label id="MainView_Label_45" text="{i18n>mainview.pt.observations}"/>
+                                    <table:template>
+                                        <Text id="MainView_Text_45" text="{ptLayoutModel>observations}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+
+                                <table:Column id="MainView_colum_46" width="8rem" hAlign="Center">
+                                    <Label id="MainView_Label_46" text="{i18n>mainview.pt.dateStructure}"/>
+                                    <table:template>
+                                        <Text id="MainView_Text_46" text="{ptLayoutModel>fecha_es}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+
+                                <table:Column id="MainView_colum_47" width="8rem" hAlign="Center">
+                                    <Label id="MainView_Label_47" text="{i18n>mainview.pt.componentPartNumber}"/>
+                                    <table:template>
+                                        <Text id="MainView_Text_47" text="{ptLayoutModel>comp_parnr}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+                                <table:Column id="MainView_colum_48" width="8rem" hAlign="Center">
+                                    <Label id="MainView_Label_48" text="{i18n>mainview.pt.componentUit}"/>
+                                    <table:template>
+                                        <Text id="MainView_Text_48" text="{ptLayoutModel>comp_unid}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+
+                                <table:Column id="MainView_colum_49" width="8rem" hAlign="Center">
+                                    <Label id="MainView_Label_49" text="{i18n>mainview.pt.quantityIncorporated}"/>
+                                    <table:template>
+                                        <Text id="MainView_Text_49" text="{ptLayoutModel>incorp_cant}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+                                <table:Column id="MainView_colum_50" width="8rem" hAlign="Center">
+                                    <Label id="MainView_Label_50" text="{i18n>mainview.pt.quantityLost}"/>
+                                    <table:template>
+                                        <Text id="MainView_Text_50" text="{ptLayoutModel>merma_Cant}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+                                <table:Column id="MainView_colum_51" width="8rem" hAlign="Center">
+                                    <Label id="MainView_Label_51" text="{i18n>mainview.pt.quantityWaste}"/>
+                                    <table:template>
+                                        <Text id="MainView_Text_51" text="{ptLayoutModel>sesper_Cant}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+
+                                <table:Column id="MainView_colum_52" width="8rem" hAlign="Center">
+                                    <Label id="MainView_Label_52" text="{i18n>mainview.pt.dateFrom}"/>
+                                    <table:template>
+                                        <Text id="MainView_Text_52" text="{ptLayoutModel>fdesde}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+
+                                <table:Column id="MainView_colum_53" width="8rem" hAlign="Center">
+                                    <Label id="MainView_Label_53" text="{i18n>mainview.pt.dateTo}"/>
+                                    <table:template>
+                                        <Text id="MainView_Text_53" text="{ptLayoutModel>f_hasta}" wrapping="true"/>
+                                    </table:template>
+                                </table:Column>
+                            </table:columns>
+                        </table:Table>
                     </IconTabFilter>
                 </items>
             </IconTabBar>

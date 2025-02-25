@@ -3,7 +3,7 @@ sap.ui.define([
 ], (Controller) => {
     "use strict";
 
-    return Controller.extend("logali.group.project1.controller.App", {
+    return Controller.extend("logali.group.project1.controller.MainView", {
         onInit() {
         }
     });
