@@ -1,0 +1,6 @@
+<core:fragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+
+    <Table id="parnrTable" items="{path: 'numParte_MP_Model>/',sorter:{ path:'{numParte_MP_Model>Parnr}'} }" growing="true" growingThreshold="20 "visible="true">
+    
+    </Table>
+</core:fragmentDefinition>

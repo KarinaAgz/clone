@@ -2,7 +2,9 @@ sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/json/JSONModel",
     "sap/ui/model/Filter",
-    "sap/ui/model/FilterOperator"
+    "sap/ui/model/FilterOperator",
+    "sap/ui/export/Spreadsheet",
+    "sap/m/MessageBox"
 ], 
 
 /**
@@ -11,12 +13,14 @@ sap.ui.define([
  * @param {typeof.sap.ui.model.json.JSONModel}JSONModel
  * @param { typeof sap.ui.model.Filter}Filter
  * @param {typeof sap.ui.model.FilterOperator}FilterOperator
+ * @param {typeof sap.ui.export.Spreadsheet} Spreadsheet 
+ * @param {typeof sap.m.MessageBox} MessageBox
  * 
  */
 
 
 
-(Controller,JSONModel) => {
+(Controller,JSONModel,Filter,FilterOperator,SpreadSheet,MessageBox) => {
     "use strict";
 
     var _tabs=["VIRTUAL","MP","PT"];
@@ -538,11 +542,12 @@ sap.ui.define([
                     }
                 }
             },
+            // valida que el usuario haya seleccionado una fecha.
             validations:function(){
-                var _date=this.getView().byId("mainView_dateRangeSelection").getValue();
+                var _date=this.getView().byId("MainView_DateRangeSelection").getValue();
                 var _return=true;
 
-                if(!_date){
+                if(!_date){ //Si _date está vacío, cambia _return a false y muestra un mensaje de error.
                     _return=false; 
                     MessageBox.error("elegir rango de fecha valido",{
                         title:"Error", contentWidth:"30%", dependentOn:this.getView()
@@ -550,7 +555,7 @@ sap.ui.define([
                 }
                 return _return;
             },
-            onDateChange:function(oEvent){
+            onDateChange:function(oEvent){ // se ejecuta cuando el usuario cambia la fecha.
                 var sFrom=oEvent.getParameter("from"),
                 sTo=oEvent.getParameter("to"),
                 bValid=oEvent.getParameter("valid"),
@@ -572,6 +577,8 @@ sap.ui.define([
              * _tabs[2] => PT
              * 
              */
+
+             //Carga datos desde un servicio OData
             _loadRemoteOdaataServices:function(_layout){
                 var _that=this;
                 if(_layout===_tabs[1]){
@@ -632,6 +639,7 @@ sap.ui.define([
                     }
                 }
             },
+            //Limpia los datos de la tabla seleccionada.
             clearTable:function(_tableID){
                 if(this.getView().getModel("requestModel").getProperty("/tableEV")){
                     if(this.getView().getModel("evLayoutModel")){
@@ -647,17 +655,19 @@ sap.ui.define([
                     }
                 }
             },
+            //se ejecuta cuando el usuario finaliza la selección de facturas en la interfaz.
             invoicesSelectionFinish:function(oEvent){
                 var selectedItems=oEvent.getParameter("selectedItems");
                 var _items=[];
 
-                if(selectedItems.length>0){
+                if(selectedItems.length>0){//erifica si la lista selectedItems contiene elementos.
                     selectedItems.forEach((element)=> _items.push({"vbeln":element.getProperty("key")})
                 );
                 }
                 this.getView().getModel("requestModel").setProperty("/invoices",[]);
                 this.getView().getModel("requestModel").setProperty("/invoices",_items);
             },
+            
 
             poSelectionFinish: function(oEvent){
                 var selectedItems=oEvent.getParameter("selectedItems");
