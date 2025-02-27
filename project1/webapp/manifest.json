@@ -16,6 +16,36 @@
             "toolsId": "142f49f8-f86e-4155-b9a2-15665e0120ae"
         }
     },
+    "dataSources":{
+        "VE_mainSource":{
+            "uri":"/sap/opu/odata/sap/ZZ1_SB_LAYOUT_EV",
+            "type":"OData",
+            "settings":{
+                "annotations":[],
+                "localUri":"localService/metadata.xml",
+                "odataVersion":"2.0"
+            }
+        },
+        "PT_LayoutSource":{
+            "uri":"/sap/opi/odata/sap/ZZ1_SB_LAYOUT_PT",
+            "type": "OData",
+            "settings":{
+                "annotations":[],
+                "localUri":"localService/metadata.xml",
+                "odataVersion":"2.0"
+            }
+        },
+        "MP_LaoyutSource":{
+            "uri":"/sap/opu/odata/sap/ZZ1_SB_LAYOUT_MP",
+            "type":"OData",
+            "settings":{
+                "annotations":[],
+                "localUri":"localService/metadata.xml",
+                "odataVersion":"2.0"
+            }
+        }
+
+    },
     "sap.ui": {
         "technology": "UI5",
         "icons": {
@@ -51,7 +81,22 @@
                 "settings": {
                     "bundleName": "logali.group.project1.i18n.i18n"
                 }
-            }
+            },
+            "EV_LayoutService":{
+                "dataSource": "VE_mainSource",
+                "preload": true,
+                "settings": {
+                    "useBatch":false
+                }
+            },
+            "PT_LayoutService":{
+                "dataSource": "PT_LayoutSource",
+                "preload": false,
+                "settings": {
+                    "useBatch":false
+                }
+            },
+            "MP_LayoutService":{"dataSource": "MP_LaoyutSource","preload": false ,"settings": {"useBatch":false}}
         },
         "resources": {
             "css": [
