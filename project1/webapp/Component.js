@@ -1,6 +1,6 @@
 sap.ui.define([
     "sap/ui/core/UIComponent",
-    "logaligroup/project1/model/models"
+    "sap/ui/model/json/JSONModel",
 ], (UIComponent, models) => {
     "use strict";
 

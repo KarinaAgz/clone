@@ -1,4 +1,4 @@
-<mvc:view
+<mvc:View
     controllerName="logaligroup.project1.controller.MainView"
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
@@ -7,34 +7,37 @@
     xmlns:f="sap.f"
     xmlns:fb="sap.ui.comp.filterbar"
 >
+
     <f:DynamicPage
         id="MainView_DynamicPage_01"
         backgroundDesign="Transparent"
         fitContent="true"
     >
         <!-- fitContent="true" ajustar automáticamente el tamaño de 
-                                                                                                    un control al contenido que tiene dentro.-->
+             un control al contenido que tiene dentro.-->
         <f:header>
+       
             <f:DynamicPageHeader
                 id="MainView_DynamicPageHeader_01"
                 backgroundDesign="Transparent"
             >
                 <f:content>
+                 
                     <fb:FilterBar
                         id="filterbar"
                         search="onSearchButton"
                         useToolbar="true"
                     >
-                        <fb:FilterGroupItems>
+                         <comp:filterGroupItems>
 
-                            <fb:FilterGroupItem
+                            <comp:FilterGroupItem
                                 id="MainViewFilterGroupItem_01"
                                 name="Dates"
                                 label="{i18n>mainView.dates}"
                                 groupName="visibleITems"
                                 visibleInFilterBar="true"
                             >
-                                <fb:control>
+                                <comp:control>
                                     <DateRangeSelection
                                         id="MainViewDateRangeSelection"
                                         required="true"
@@ -52,18 +55,18 @@
                                     ]}"
                                         change="onDateChange"
                                     />
-                                </fb:control>
-                            </fb:FilterGroupItem>
+                                </comp:control>
+                            </comp:FilterGroupItem>
 
 
-                            <fb:FilterGroupItem
+                            <comp:FilterGroupItem
                                 id="MainView_FilterGroupItem_03"
                                 name="Invoices"
                                 label="{i18n>mainview.invoices}"
                                 groupName="visibleItems"
                                 visibleInFilterBar="{requestModel>/visible_input_invoices}"
                             >
-                                <fb:control>
+                                <comp:control>
                                     <MultiComboBox
                                         id="MainView_MultiCommboBox_02"
                                         selectionChange=""
@@ -80,18 +83,18 @@
                                             text="{EV_LAyoutService>vbeln}"
                                         />
                                     </MultiComboBox>
-                                </fb:control>
-                            </fb:FilterGroupItem>
+                                </comp:control>
+                            </comp:FilterGroupItem>
 
 
-                            <fb:FilterGroupItem
+                            <comp:FilterGroupItem
                                 id="MainView_EV_Material_04"
                                 name="Material"
                                 label="{i18n>mainview.material}"
                                 groupName="visibleItems_ve"
                                 visibleInFilterBar="{requestModel>/visible_input_material}"
                             >
-                                <fb:control>
+                                <comp:control>
                                     <MultiComboBox
                                         id="MainView_multiCB_Material_VE"
                                         selectionChange=""
@@ -108,18 +111,18 @@
                                             text="{EV_LayoutService>ParnrDescription}"
                                         />
                                     </MultiComboBox>
-                                </fb:control>
-                            </fb:FilterGroupItem>
+                                </comp:control>
+                            </comp:FilterGroupItem>
 
 
-                            <fb:FilterGroupItem
+                            <comp:FilterGroupItem
                                 id="MainView_PT_Material"
                                 name="Material"
                                 label="{i18n>mainview.material}"
                                 groupName="visibleItems_pt"
                                 visibleInFilterBar="{requestModel>/visible_input_matnr_pt}"
                             >
-                                <fb:control>
+                                <comp:control>
                                     <MultiComboBox
                                         id="MainView_MultiCB_Material_PT"
                                         selectionFinish="materialSelectionFinish"
@@ -132,17 +135,17 @@
                                             text="{PT_LayoutService>ParnrDescription}"
                                         />
                                     </MultiComboBox>
-                                </fb:control>
-                            </fb:FilterGroupItem>
+                                </comp:control>
+                            </comp:FilterGroupItem>
 
 
-                            <fb:FilterGroupItem
+                            <comp:FilterGroupItem
                                 id="MainView_FilterGroupItem_05"
                                 name="PurchasedOrders"
                                 label="{i18n>mainview.purchaseORders}"
                                 visibleInFilterBar="{requestModel>/visible_input_po}"
                             >
-                                <fb:control>
+                                <comp:control>
                                     <MultiComboBox
                                         id="MainView_MultiComboBox_05"
                                         selectionChange="handleSelectionChange"
@@ -157,18 +160,18 @@
                                             text="{EV_LayoutSerrvice>ebeln}"
                                         />
                                     </MultiComboBox>
-                                </fb:control>
-                            </fb:FilterGroupItem>
+                                </comp:control>
+                            </comp:FilterGroupItem>
 
 
-                            <fb:FilterGroupItem
+                            <comp:FilterGroupItem
                                 id="MainView_FilterGroupItem_06"
                                 name="Customer"
                                 label="{i18n>mainview.customer}"
                                 groupName="visibleItems"
                                 visibleInFilterBar="{requestModel>/visible_input_cliente}"
                             >
-                                <fb:control>
+                                <comp:control>
                                     <Input
                                         id="MainView_input_cliente"
                                         placeholder="{i18n>mainview.combobox.cliente.placeholder}"
@@ -183,58 +186,58 @@
                                         
                                     </suggestionItems>
                                     </Input>
-                                </fb:control>
-                            </fb:FilterGroupItem>
+                                </comp:control>
+                            </comp:FilterGroupItem>
 
 
-                            <fb:FilterGroupItem id="MainView_FilterGroupItem_07" name="Supplier" label="{i18n>mainview.supplier}" groupName="visibleITems" visibleInFilterBar="{requestModel>/visible_input_lifnr}">
-                                <fb:control>
+                            <comp:FilterGroupItem id="MainView_FilterGroupItem_07" name="Supplier" label="{i18n>mainview.supplier}" groupName="visibleITems" visibleInFilterBar="{requestModel>/visible_input_lifnr}">
+                                <comp:control>
                                     <Input id="MainView_Input_LinfnrVH" placeholder="Buscar Proveedro" showSuggestion="true" showValueHelp="true" suggestionItems="{lifnr_MP_Model>/}" type="Text" valueHelpRequest="onVHLifnrRequest" submit="onSubmit" value="{requestModel>/lifnr}">
                                         <suggestionItems>
                                             <core:Item id="MainView_Item_Limfnr" text="{lifnr_MP_Model>Lifnr}"/>
                                             
                                         </suggestionItems>
                                     </Input>
-                                </fb:control>
-                            </fb:FilterGroupItem>
+                                </comp:control>
+                            </comp:FilterGroupItem>
 
 
-                            <fb:FilterGroupItem id="MAinView_filterGroupItem_MP" name="NumeroParte" label="{i18n>mainview.numparte}" groupName="visibleITems_VE" visibleInFilterBar="{requestModel>/visible_input_numParte_mp}">
-                                <fb:control>
+                            <comp:FilterGroupItem id="MainView_filterGroupItem_MP" name="NumeroParte" label="{i18n>mainview.numparte}" groupName="visibleITems_VE" visibleInFilterBar="{requestModel>/visible_input_numParte_mp}">
+                                <comp:control>
                                     <Input id="MainView_Input_ParnrVH_MP" value="{reuqestModel>/parnr}" placeholder="buscar no.parte" showSuggestion="true" showValueHelp="true" type="Text" valueHelpRequest="onVHParnrRequest" submit="onSubmit_MP" suggestionItems="{numParte_MP_Model>/}">
                                     <suggestionItems>
                                         <core:Item id="MainView_Item_Parnr_MP" text="{numParte_MP_Model>ParnrDescription}"/>
 
                                     </suggestionItems>
                                     </Input>
-                                </fb:control>
-                            </fb:FilterGroupItem>
+                                </comp:control>
+                            </comp:FilterGroupItem>
 
 
-                                <fb:FilterGroupItem id="MainView_FGI_Bukrs_EV" name="Bukrs_EV" visibleInFilterBar="{requeestModel>/visible_input_bukrs_ev}">
-                                    <fb:control>
+                                <comp:FilterGroupItem id="MainView_FGI_Bukrs_EV" name="Bukrs_EV" visibleInFilterBar="{requeestModel>/visible_input_bukrs_ev}">
+                                    <comp:control>
                                         <Input id="MainView_Input_bukrssVH_EV" value="{requestModel>/bukrs_ev}" showSuggestion="true" showValueHelp="true" type="Text" valueHelpRequest="onVHBukrs_EV_Request" submit="onSubmit_EV" suggestionItems="{EV_LayoutService}">
                                             <suggestionItems>
                                                 <core:Item id="MainView_item_BUKRS_EV" text="{EV_LayoutService>butxt}"/>
                                             </suggestionItems>
                                         </Input>
-                                    </fb:control>
-                                </fb:FilterGroupItem>
+                                    </comp:control>
+                                </comp:FilterGroupItem>
 
 
-                                <fb:FilterGroupItem id="MainView_FGI_Bukrs_MP" name="Bukrs_MP" label="{i18n>mainview.bukrs}" groupName="Bukrs_MP" visibleInFilterBar="{requestModel>/visible_input_bukrs_mp}">
-                                    <fb:control>
+                                <comp:FilterGroupItem id="MainView_FGI_Bukrs_MP" name="Bukrs_MP" label="{i18n>mainview.bukrs}" groupName="Bukrs_MP" visibleInFilterBar="{requestModel>/visible_input_bukrs_mp}">
+                                    <comp:control>
                                         <Input id="MainView_Input_BukrsVH_MP" value="{requestModel>/bukrs_mp}" placeholder="Buscar sociedad" showSuggestion="true" showValueHelp="true" type="Text" valueHelpRequest="onVHBukrs_MP_Request" submit="onSubmit_MP" suggestionItems="{bukrs_MP_Model>/}" >
                                             <suggestionItems>
                                                 <core:Item id="MainView_Item_BUKRS_MP" text="{bukrs_MP_Model>butxt}"/>
                                             </suggestionItems>                      
                                         </Input>
-                                    </fb:control>
-                                </fb:FilterGroupItem>
+                                    </comp:control>
+                                </comp:FilterGroupItem>
 
 
-                                <fb:FilterGroupItem id="MainView_FGI_Bukrs_PT" name="Bukrs_PT" label="{i18n>mainview.bukrs}" groupName="Bukrs_PT" visibleInFilterBar="{requestModel>/visible_input_bukrs_pt}">
-                                    <fb:control>
+                                <comp:FilterGroupItem id="MainView_FGI_Bukrs_PT" name="Bukrs_PT" label="{i18n>mainview.bukrs}" groupName="Bukrs_PT" visibleInFilterBar="{requestModel>/visible_input_bukrs_pt}">
+                                    <comp:control>
                                        <!-- <Input id="MainView_input_BukrsVH_PT" value="{requestModel>bukrs_pt}" placeholder="Buscar sociedad" showSuggestion="true" showValueHelp="true" type="Text" valueHelpRequest="onVHBukrs_PT_Request" submit="onSubmit_PT" suggestionItems="{bukrs_PT_Model>/}">
                                             <suggestionItems>
                                                 <core:Item id="MainView_Item_BUKRS_PT" text="{bukrs_PT_Model>butxt}"/>
@@ -257,10 +260,10 @@
                                             text="{bukrs_PT_Model>bukrs} - {bukrs_PT_Model>butxt}"
                                         />
                                     </MultiComboBox>
-                                </fb:control>
-                                </fb:FilterGroupItem>
-                                
-                            </fb:FilterGroupItems>
+                                </comp:control>
+                                </comp:FilterGroupItem>
+                                </comp:filterGroupItems>
+                            
                         </fb:FilterBar>
                     </f:content>
                 </f:DynamicPageHeader>
@@ -666,4 +669,4 @@
                 </IconTabBar>
             </f:content>
         </f:DynamicPage>
-    </mvc:view>
+    </mvc:View>

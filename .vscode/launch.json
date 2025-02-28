@@ -16,6 +16,34 @@
       ],
       "args": [
         "--open",
+        "index.html",
+        "--config",
+        "ui5-mock.yaml"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "env": {
+        "FIORI_TOOLS_BACKEND_CONFIG": "[{\"path\":\"/sap\",\"url\":\"\",\"destination\":\"DS4DEV\"}]",
+        "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false&sap-ui-support=true",
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/clone/project1\"}"
+      }
+    },
+    {
+      "name": "project1-config2",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/project1",
+      "runtimeExecutable": "npx",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": [
+        "fiori",
+        "run"
+      ],
+      "args": [
+        "--open",
         "index.html"
       ],
       "console": "internalConsole",
@@ -23,7 +51,8 @@
       "outputCapture": "std",
       "env": {
         "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/clone/project1\"}",
-        "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false"
+        "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false",
+        "FIORI_TOOLS_BACKEND_CONFIG": "[{\"path\":\"/sap\",\"url\":\"\",\"destination\":\"DS4DEV\"}]"
       }
     }
   ]

@@ -1,0 +1,10 @@
+specVersion: "2.0"
+kind: extension
+type: server-middleware
+metadata:
+  name: ui5-mock
+middleware:
+  path: ui5-middleware-mock
+
+
+

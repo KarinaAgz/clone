@@ -83,6 +83,7 @@
             },
             "EV_LayoutService": {
                 "dataSource": "VE_mainSource",
+                "type": "sap.ui.model.odata.v2.ODataModel",
                 "preload": true,
                 "settings": {
                     "useBatch": false
@@ -90,6 +91,7 @@
             },
             "PT_LayoutService": {
                 "dataSource": "PT_LayoutSource",
+                "type": "sap.ui.model.odata.v2.ODataModel",
                 "preload": false,
                 "settings": {
                     "useBatch": false
@@ -97,6 +99,7 @@
             },
             "MP_LayoutService": {
                 "dataSource": "MP_LayoutSource",
+                "type": "sap.ui.model.odata.v2.ODataModel",
                 "preload": false,
                 "settings": {
                     "useBatch": false
@@ -124,15 +127,15 @@
             },
             "routes": [
                 {
-                    "name": "RouteApp",
+                    "name": "RouteMainView",
                     "pattern": ":?query:",
                     "target": [
-                        "TargetApp"
+                        "TargetMainView"
                     ]
                 }
             ],
             "targets": {
-                "TargetApp": {
+                "TargetMainView": {
                     "id": "MainView",
                     "name": "MainView"
                 }
