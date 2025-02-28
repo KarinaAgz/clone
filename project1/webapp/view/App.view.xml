@@ -1,4 +1,4 @@
-<mvc:View controllerName="logali.group.project1.controller.App"
+<mvc:View controllerName="logaligroup.project1.controller.App"
     displayBlock="true"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">

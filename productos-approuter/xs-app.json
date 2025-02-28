@@ -1,4 +1,20 @@
 {
   "authenticationMethod": "none",
-  "routes": []
+  "welcomeFile":"index.html",
+  "logout":{
+      "logoutEndpoint":"/do/logout"
+  },
+  "routes": [{
+    "authenticationType":"none",
+    "csrfProteccion":false,
+    "source":"^/sap/opu/odata/sap/ZZ1_SB_LAYOUT_EV/",
+    "destination":"DS4DEV"
+  },
+  {
+    "source":"^(.*)$",
+    "target":"$1",
+    "service":"html5-apps-repo-rt",
+    "authenticationType":"xsuaa"
+  }
+]
 }

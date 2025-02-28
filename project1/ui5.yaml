@@ -2,7 +2,7 @@
 
 specVersion: "3.1"
 metadata:
-  name: logali.group.project1
+  name: logaligroup.project1
 type: application
 server:
   customMiddleware:
@@ -24,5 +24,5 @@ server:
     - name: fiori-tools-preview
       afterMiddleware: fiori-tools-appreload
       configuration:
-        component: logali.group.project1
+        component: logaligroup.project1
         ui5Theme: sap_horizon

@@ -16,35 +16,34 @@
             "toolsId": "142f49f8-f86e-4155-b9a2-15665e0120ae"
         }
     },
-    "dataSources":{
-        "VE_mainSource":{
-            "uri":"/sap/opu/odata/sap/ZZ1_SB_LAYOUT_EV",
-            "type":"OData",
-            "settings":{
-                "annotations":[],
-                "localUri":"localService/metadata.xml",
-                "odataVersion":"2.0"
-            }
-        },
-        "PT_LayoutSource":{
-            "uri":"/sap/opi/odata/sap/ZZ1_SB_LAYOUT_PT",
+    "dataSources": {
+        "VE_mainSource": {
+            "uri": "/sap/opu/odata/sap/ZZ1_SB_LAYOUT_EV",
             "type": "OData",
-            "settings":{
-                "annotations":[],
-                "localUri":"localService/metadata.xml",
-                "odataVersion":"2.0"
+            "settings": {
+                "annotations": [],
+                "localUri": "localService/metadata.xml",
+                "odataVersion": "2.0"
             }
         },
-        "MP_LaoyutSource":{
-            "uri":"/sap/opu/odata/sap/ZZ1_SB_LAYOUT_MP",
-            "type":"OData",
-            "settings":{
-                "annotations":[],
-                "localUri":"localService/metadata.xml",
-                "odataVersion":"2.0"
+        "PT_LayoutSource": {
+            "uri": "/sap/opu/odata/sap/ZZ1_SB_LAYOUT_PT",
+            "type": "OData",
+            "settings": {
+                "annotations": [],
+                "localUri": "localService/metadata.xml",
+                "odataVersion": "2.0"
+            }
+        },
+        "MP_LayoutSource": {
+            "uri": "/sap/opu/odata/sap/ZZ1_SB_LAYOUT_MP",
+            "type": "OData",
+            "settings": {
+                "annotations": [],
+                "localUri": "localService/metadata.xml",
+                "odataVersion": "2.0"
             }
         }
-
     },
     "sap.ui": {
         "technology": "UI5",
@@ -79,24 +78,30 @@
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
-                    "bundleName": "logali.group.project1.i18n.i18n"
+                    "bundleName": "logaligroup.project1.i18n.i18n"
                 }
             },
-            "EV_LayoutService":{
+            "EV_LayoutService": {
                 "dataSource": "VE_mainSource",
                 "preload": true,
                 "settings": {
-                    "useBatch":false
+                    "useBatch": false
                 }
             },
-            "PT_LayoutService":{
+            "PT_LayoutService": {
                 "dataSource": "PT_LayoutSource",
                 "preload": false,
                 "settings": {
-                    "useBatch":false
+                    "useBatch": false
                 }
             },
-            "MP_LayoutService":{"dataSource": "MP_LaoyutSource","preload": false ,"settings": {"useBatch":false}}
+            "MP_LayoutService": {
+                "dataSource": "MP_LayoutSource",
+                "preload": false,
+                "settings": {
+                    "useBatch": false
+                }
+            }
         },
         "resources": {
             "css": [
@@ -113,9 +118,9 @@
                 "transition": "slide",
                 "type": "View",
                 "viewType": "XML",
-                "path": "logali.group.project1.view",
+                "path": "logaligroup.project1.view",
                 "async": true,
-                "viewPath": "logali.group.project1.view"
+                "viewPath": "logaligroup.project1.view"
             },
             "routes": [
                 {
@@ -128,13 +133,13 @@
             ],
             "targets": {
                 "TargetApp": {
-                    "id": "App",
-                    "name": "App"
+                    "id": "MainView",
+                    "name": "MainView"
                 }
             }
         },
         "rootView": {
-            "viewName": "logali.group.project1.view.App",
+            "viewName": "logaligroup.project1.view.App",
             "type": "XML",
             "id": "App"
         }

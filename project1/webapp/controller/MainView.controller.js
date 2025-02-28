@@ -27,7 +27,7 @@ sap.ui.define([
     /** ordenamiento en cabecera de tablas , par filtrar por cabecera y filtrar proveedores por sociedad
      */
 
-    return Controller.extend("logali.group.project1.controller.MainView", {
+    return Controller.extend("logaligroup.project1.controller.MainView", {
         onInit() {
 
             let _requestModel=new JSONModel({
@@ -113,7 +113,7 @@ sap.ui.define([
             let sInputValue_lifnr=oEvent.getSource().getValue();
             this._lifnrInputId=oEvent.getSource().getId();
             if(!this._oVHlifnrDialog){
-                this._oVHlifnrDialog=sap.ui.xmlfragment("productos.view.fragments.LifnrSelectionDialog",this);
+                this._oVHlifnrDialog=sap.ui.xmlfragment("project1.view.fragments.LifnrSelectionDialog",this);
                 this.getView().addDependent(this._oVHlifnrDialog);
             }
             //Implement filter functionality
@@ -142,7 +142,7 @@ sap.ui.define([
             let sInputValue_Bukrs_EV=oEvent.getSource().getValue();
             this._bukrs_EV_InputId=oEvent.getSource().getId();
             if(!this._oVHBukrs_EV_Dialog){
-                this._OVHBukrs_EV_Dialog=sap.ui.xmlfragment("productos.vies.fragments.Bukrs_EV_SelectionDialog",
+                this._OVHBukrs_EV_Dialog=sap.ui.xmlfragment("project1.view.fragments.Bukrs_EV_SelectionDialog",
                     this
                 );
                 this.getView().addDependent(this._oVHBukrs_EV_Dialog);
@@ -174,7 +174,7 @@ sap.ui.define([
             let sInputValue_Bukrs_MP=oEvent.getSource().getValue();
             this._bukrs_MP_InputId=oEvent.getSource().getId();
             if(!this._oVHBukrs_MP_Dialog){
-                this._oVHBukrs_MP_Dialog=sap.ui.xmlfragment("proyecti.view.fragments.Bukrs_MP_SelectionDialog",this);
+                this._oVHBukrs_MP_Dialog=sap.ui.xmlfragment("proyect1.view.fragments.Bukrs_MP_SelectionDialog",this);
                 this.getView().addDependent(this._oVHBukrs_MP_Dialog);
             }
             //implement filter funtionality
@@ -201,7 +201,7 @@ sap.ui.define([
             let sInputValue_Bukrs_PT=oEvent.getSource().getValue();
             this._bukrs_MP_InputId=oEvent.getSource().getId();
             if(!this._oVHBukrs_PT_Dialog){
-                this._oVHBukrs_PT_Dialog=sap.ui.xmlfragment("productos.view.fragments.Bukrs_PT_SelectionDialog",this);
+                this._oVHBukrs_PT_Dialog=sap.ui.xmlfragment("project1.view.fragments.Bukrs_PT_SelectionDialog",this);
                 this.getView().addDependent(this._oVHBukrs_PT_Dialog);
             }
             //implement filter functionality
