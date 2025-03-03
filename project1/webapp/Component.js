@@ -13,6 +13,7 @@ sap.ui.define([
         },
 
         init() {
+            console.log("Component initialized"); 
             // call the base component's init function
             UIComponent.prototype.init.apply(this, arguments);
 

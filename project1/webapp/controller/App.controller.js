@@ -5,6 +5,7 @@ sap.ui.define([
 
     return Controller.extend("logaligroup.project1.controller.MainView", {
         onInit() {
+            console.log("App view initialized");
         }
     });
 });

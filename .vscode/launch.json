@@ -52,7 +52,9 @@
       "env": {
         "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/clone/project1\"}",
         "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false",
-        "FIORI_TOOLS_BACKEND_CONFIG": "[{\"path\":\"/sap\",\"url\":\"\",\"destination\":\"DS4DEV\"}]"
+        "FIORI_TOOLS_BACKEND_CONFIG": "[{\"path\":\"/sap\",\"url\":\"\",\"destination\":\"DS4DEV\"}]",
+        "FIORI_TOOLS_UI5_VERSION": "1.133.0",
+        "FIORI_TOOLS_UI5_URI": "https://ui5.sap.com"
       }
     }
   ]

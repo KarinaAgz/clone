@@ -1,150 +1,151 @@
 {
     "_version": "1.65.0",
     "sap.app": {
-        "id": "logaligroup.project1",
-        "type": "application",
-        "i18n": "i18n/i18n.properties",
-        "applicationVersion": {
-            "version": "0.0.1"
-        },
-        "title": "{{appTitle}}",
-        "description": "{{appDescription}}",
-        "resources": "resources.json",
-        "sourceTemplate": {
-            "id": "@sap/generator-fiori:basic",
-            "version": "1.16.4",
-            "toolsId": "142f49f8-f86e-4155-b9a2-15665e0120ae"
-        }
+      "id": "logaligroup.project1",
+      "type": "application",
+      "i18n": "i18n/i18n.properties",
+      "applicationVersion": {
+        "version": "0.0.1"
+      },
+      "title": "{{appTitle}}",
+      "description": "{{appDescription}}",
+      "resources": "resources.json",
+      "sourceTemplate": {
+        "id": "@sap/generator-fiori:basic",
+        "version": "1.16.4",
+        "toolsId": "142f49f8-f86e-4155-b9a2-15665e0120ae"
+      }
     },
     "dataSources": {
-        "VE_mainSource": {
-            "uri": "/sap/opu/odata/sap/ZZ1_SB_LAYOUT_EV",
-            "type": "OData",
-            "settings": {
-                "annotations": [],
-                "localUri": "localService/metadata.xml",
-                "odataVersion": "2.0"
-            }
-        },
-        "PT_LayoutSource": {
-            "uri": "/sap/opu/odata/sap/ZZ1_SB_LAYOUT_PT",
-            "type": "OData",
-            "settings": {
-                "annotations": [],
-                "localUri": "localService/metadata.xml",
-                "odataVersion": "2.0"
-            }
-        },
-        "MP_LayoutSource": {
-            "uri": "/sap/opu/odata/sap/ZZ1_SB_LAYOUT_MP",
-            "type": "OData",
-            "settings": {
-                "annotations": [],
-                "localUri": "localService/metadata.xml",
-                "odataVersion": "2.0"
-            }
+      "VE_mainSource": {
+        "uri": "/sap/opu/odata/sap/ZZ1_SB_LAYOUT_EV",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
         }
+      },
+      "PT_LayoutSource": {
+        "uri": "/sap/opu/odata/sap/ZZ1_SB_LAYOUT_PT",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      },
+      "MP_LayoutSource": {
+        "uri": "/sap/opu/odata/sap/ZZ1_SB_LAYOUT_MP",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
     },
     "sap.ui": {
-        "technology": "UI5",
-        "icons": {
-            "icon": "",
-            "favIcon": "",
-            "phone": "",
-            "phone@2": "",
-            "tablet": "",
-            "tablet@2": ""
-        },
-        "deviceTypes": {
-            "desktop": true,
-            "tablet": true,
-            "phone": true
-        }
+      "technology": "UI5",
+      "icons": {
+        "icon": "",
+        "favIcon": "",
+        "phone": "",
+        "phone@2": "",
+        "tablet": "",
+        "tablet@2": ""
+      },
+      "deviceTypes": {
+        "desktop": true,
+        "tablet": true,
+        "phone": true
+      }
     },
     "sap.ui5": {
-        "flexEnabled": true,
-        "dependencies": {
-            "minUI5Version": "1.133.0",
-            "libs": {
-                "sap.m": {},
-                "sap.ui.core": {}
-            }
-        },
-        "contentDensities": {
-            "compact": true,
-            "cozy": true
-        },
-        "models": {
-            "i18n": {
-                "type": "sap.ui.model.resource.ResourceModel",
-                "settings": {
-                    "bundleName": "logaligroup.project1.i18n.i18n"
-                }
-            },
-            "EV_LayoutService": {
-                "dataSource": "VE_mainSource",
-                "type": "sap.ui.model.odata.v2.ODataModel",
-                "preload": true,
-                "settings": {
-                    "useBatch": false
-                }
-            },
-            "PT_LayoutService": {
-                "dataSource": "PT_LayoutSource",
-                "type": "sap.ui.model.odata.v2.ODataModel",
-                "preload": false,
-                "settings": {
-                    "useBatch": false
-                }
-            },
-            "MP_LayoutService": {
-                "dataSource": "MP_LayoutSource",
-                "type": "sap.ui.model.odata.v2.ODataModel",
-                "preload": false,
-                "settings": {
-                    "useBatch": false
-                }
-            }
-        },
-        "resources": {
-            "css": [
-                {
-                    "uri": "css/style.css"
-                }
-            ]
-        },
-        "routing": {
-            "config": {
-                "routerClass": "sap.m.routing.Router",
-                "controlAggregation": "pages",
-                "controlId": "app",
-                "transition": "slide",
-                "type": "View",
-                "viewType": "XML",
-                "path": "logaligroup.project1.view",
-                "async": true,
-                "viewPath": "logaligroup.project1.view"
-            },
-            "routes": [
-                {
-                    "name": "RouteMainView",
-                    "pattern": ":?query:",
-                    "target": [
-                        "TargetMainView"
-                    ]
-                }
-            ],
-            "targets": {
-                "TargetMainView": {
-                    "id": "MainView",
-                    "name": "MainView"
-                }
-            }
-        },
-        "rootView": {
-            "viewName": "logaligroup.project1.view.App",
-            "type": "XML",
-            "id": "App"
+      "flexEnabled": true,
+      "dependencies": {
+        "minUI5Version": "1.133.0",
+        "libs": {
+          "sap.m": {},
+          "sap.ui.core": {}
         }
+      },
+      "contentDensities": {
+        "compact": true,
+        "cozy": true
+      },
+      "models": {
+        "i18n": {
+          "type": "sap.ui.model.resource.ResourceModel",
+          "settings": {
+            "bundleName": "logaligroup.project1.i18n.i18n"
+          }
+        },
+        "EV_LayoutService": {
+          "dataSource": "VE_mainSource",
+          "type": "sap.ui.model.odata.v2.ODataModel",
+          "preload": true,
+          "settings": {
+            "useBatch": false
+          }
+        },
+        "PT_LayoutService": {
+          "dataSource": "PT_LayoutSource",
+          "type": "sap.ui.model.odata.v2.ODataModel",
+          "preload": false,
+          "settings": {
+            "useBatch": false
+          }
+        },
+        "MP_LayoutService": {
+          "dataSource": "MP_LayoutSource",
+          "type": "sap.ui.model.odata.v2.ODataModel",
+          "preload": false,
+          "settings": {
+            "useBatch": false
+          }
+        }
+      },
+      "resources": {
+        "css": [
+          {
+            "uri": "css/style.css"
+          }
+        ]
+      },
+      "routing": {
+        "config": {
+          "routerClass": "sap.m.routing.Router",
+          "controlAggregation": "pages",
+          "controlId": "app",
+          "transition": "slide",
+          "type": "View",
+          "viewType": "XML",
+          "path": "logaligroup.project1.view",
+          "async": true,
+          "viewPath": "logaligroup.project1.view"
+        },
+        "routes": [
+          {
+            "name": "RouteMainView",
+            "pattern": ":?query:",
+            "target": [
+              "TargetMainView"
+            ]
+          }
+        ],
+        "targets": {
+          "TargetMainView": {
+            "id": "MainView",
+            "name": "MainView"
+          }
+        }
+      },
+      "rootView": {
+        "viewName": "logaligroup.project1.view.App",
+        "type": "XML",
+        "id": "App"
+      }
     }
-}
+  }
+  
