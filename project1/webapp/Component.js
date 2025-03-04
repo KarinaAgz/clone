@@ -1,7 +1,16 @@
 sap.ui.define([
     "sap/ui/core/UIComponent",
+    "logaligroup/project1/model/models",
     "sap/ui/model/json/JSONModel",
-], (UIComponent, models) => {
+], 
+ /**
+ * 
+ * @param {typeof sap.ui.core.UIComponent} UIComponent 
+ * @param {typeof report.ricefw.model.models} models 
+ * @param {typeof sap.ui.model.json.JSONModel} JSONModel 
+ * @returns 
+ */
+(UIComponent, models) => {
     "use strict";
 
     return UIComponent.extend("logaligroup.project1.Component", {
@@ -13,7 +22,6 @@ sap.ui.define([
         },
 
         init() {
-            console.log("Component initialized"); 
             // call the base component's init function
             UIComponent.prototype.init.apply(this, arguments);
 
@@ -22,6 +30,10 @@ sap.ui.define([
 
             // enable routing
             this.getRouter().initialize();
+
+            // set json model for Building MP Excel
+            this.setModel(models.buildMpModel(), "mpModel");
+
         }
     });
 });

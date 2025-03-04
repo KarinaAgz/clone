@@ -15,6 +15,7 @@ function (JSONModel, Device) {
             oModel.setDefaultBindingMode("OneWay");
             return oModel;
         },
+
         buildMpModel: function(){
             let oModel = new JSONModel({
                 "noParte": "",
