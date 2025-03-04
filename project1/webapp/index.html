@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>App_Productos</title>
+    <title>Productos</title>
     <style>
         html, body, body > div, #container, #container-uiarea {
             height: 100%;
@@ -14,8 +14,10 @@
         id="sap-ui-bootstrap"
         src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
         data-sap-ui-theme="sap_horizon"
-        data-sap-ui-resourceroots='{"logaligroup.project1": "./"}'
-        data-sap-ui-oninit="module:logaligroup/project1/Component"
+        data-sap-ui-resourceroots='{
+            "logaligroup.project1": "./"
+        }'
+        data-sap-ui-oninit="module:sap/ui/core/ComponentSupport"
         data-sap-ui-compatVersion="edge"
         data-sap-ui-async="true"
         data-sap-ui-frameOptions="trusted"
@@ -26,7 +28,7 @@
         data-sap-ui-component
         data-name="logaligroup.project1"
         data-id="container"
-        data-settings='{"id" :"logaligroup.project1"}'
+        data-settings='{"id" : "logaligroup.project1"}'
         data-handle-validation="true"
     ></div>
 </body>
