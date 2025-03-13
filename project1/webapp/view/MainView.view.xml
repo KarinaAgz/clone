@@ -82,6 +82,7 @@
                                             id="Item_invoices_01"
                                             key="{EV_LayoutService>vbeln}"
                                             text="{EV_LayoutService>vbeln}"
+                                            
                                         />
                                     </MultiComboBox>
                                 </fb:control>
